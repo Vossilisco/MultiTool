@@ -10,26 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MultiTool.Unit_Converter;
 
-namespace MultiTool {
+namespace MultiTool.Login_system {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for FirstPage.xaml
     /// </summary>
-    public partial class MainWindow : Window {
-        public MainWindow() {
+    public partial class FirstPage : Window {
+        public FirstPage() {
             InitializeComponent();
         }
 
-        private void MenuUnitConverter(object sender, RoutedEventArgs e) {
+        private void MenuLogin(object sender, RoutedEventArgs e) {
             var s = new MultiTool.Unit_Converter.UnitConverter();
             s.Show();
         }
 
-
-
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e) {
+            var password = PasswordBox.Password;
+        }
 
     }
 }

@@ -1,0 +1,44 @@
+﻿<Window x:Class="MultiTool.Login_system.FirstPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MultiTool.Login_system"
+        mc:Ignorable="d"
+        Title="Multitool 0.1b" Height="350" Width="525">
+
+    <Grid>
+        <!--Columnas-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <!--Filas-->
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <!--Fondo-->
+        <Grid.Background>
+            <ImageBrush ImageSource="loginbg.png"/>
+        </Grid.Background>
+
+        <Label Grid.Column="1" Grid.Row="0" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                 Height="25" Width="65" Background="#6AA3C5">Username</Label>
+
+        <TextBox Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Center" MaxLength="12"
+                VerticalAlignment="Top" Height="25" Width="90" Margin="5" Text="{Binding Path=Username,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+        <Label Grid.Column="1" Grid.Row="1" Foreground="White"   HorizontalAlignment="Center" 
+               Height="25" Width="65" Background="#6AA3C5" >Password</Label>
+
+        <PasswordBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" MaxLength="12" VerticalAlignment="Bottom"
+                 Height="25" Width="90" Margin="10" PasswordChanged="PasswordBox_PasswordChanged" PasswordChar="*" Name="PasswordBox"></PasswordBox>
+               
+        <Button  Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="50">Login</Button> 
+
+    </Grid>
+</Window>
