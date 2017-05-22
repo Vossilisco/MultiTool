@@ -22,6 +22,8 @@ namespace MultiTool.Login_system {
             InitializeComponent();
             this.DataContext = this;
         }
+        private string username;
+        private string password;
 
         #region NotifyProperties
         public String Username
@@ -46,29 +48,26 @@ namespace MultiTool.Login_system {
         public event PropertyChangedEventHandler PropertyChanged;
         #endregion
 
-        private String username;
-        private String password;
-        private String userAdmin = "admin";
-        private String passAdmin = "admin";
-
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e) {
             this.password = PasswordBox.Password.ToString();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) {
-            if(username == userAdmin && password == passAdmin) {
+            User myUser = new User(username, password);
+
+            if(username == "admin" && password == "admin") {
                 var s = new MultiTool.Unit_Converter.UnitConverter();
                 s.Show();
-            }else {
-                MessageBoxResult result = MessageBox.Show("User and/or password invalid. Press 'Yes' to exit now or 'No' to try again.", "Invalid login", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-                if(result == MessageBoxResult.Yes) {
-                    Application.Current.Shutdown();
-                }
+                this.Close();
+
+            }else{
+                MessageBoxResult result = MessageBox.Show("User and/or password invalid.Press 'Yes' to exit now or 'No' to try again.", "Invalid login", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+                if(result == MessageBoxResult.Yes) Application.Current.Shutdown();
             }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e) {
 
-        }
+
     }
 }

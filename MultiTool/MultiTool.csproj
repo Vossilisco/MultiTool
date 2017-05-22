@@ -58,6 +58,7 @@
     <Compile Include="Login system\FirstPage.xaml.cs">
       <DependentUpon>FirstPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Login system\User.cs" />
     <Compile Include="Unit Converter\UnitConverter.xaml.cs">
       <DependentUpon>UnitConverter.xaml</DependentUpon>
     </Compile>
