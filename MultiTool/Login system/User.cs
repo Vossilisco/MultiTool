@@ -23,7 +23,7 @@ namespace MultiTool.Login_system {
             return this.password;
         }
 
-        public void sePassword(String pass) {
+        public void setPassword(String pass) {
             this.password = pass;
         }
     }
